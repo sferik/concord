@@ -2,7 +2,11 @@ concord
 =======
 
 [![Gem Version](http://img.shields.io/gem/v/concord.svg)][https://rubygems.org/gems/concord]
-![CI](https://github.com/mbj/concord/workflows/CI/badge.svg)
+![Specs](https://github.com/mbj/concord/actions/workflows/specs.yml/badge.svg)
+![Rubocop](https://github.com/mbj/concord/actions/workflows/rubocop.yml/badge.svg)
+![Mutant](https://github.com/mbj/concord/actions/workflows/mutant.yml/badge.svg)
+![Steep](https://github.com/mbj/concord/actions/workflows/steep.yml/badge.svg)
+![Yardstick](https://github.com/mbj/concord/actions/workflows/yardstick.yml/badge.svg)
 
 Library to transform this:
 
@@ -56,7 +60,7 @@ You can still add YARD docs for generated interface.
 Rubies
 ------
 
-Tested under all >= 1.9 rubies.
+Tested under Ruby >= 3.3.
 
 Installation
 ------------

@@ -1,0 +1,5 @@
+# Minimal type stub for the Equalizer gem
+
+class Equalizer < Module
+  def initialize: (*Symbol keys, ?inspect: bool) -> void
+end

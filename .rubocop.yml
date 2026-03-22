@@ -1,6 +1,22 @@
+plugins:
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-thread_safety
+
 AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
   Include:
     - 'Gemfile'
+    - 'Rakefile'
+    - 'concord.gemspec'
+    - 'lib/**/*.rb'
+    - 'spec/**/*.rb'
   Exclude:
-    - 'vendor/**'
-    - 'benchmarks/**'
+    - 'vendor/**/*'
+    - 'benchmarks/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always

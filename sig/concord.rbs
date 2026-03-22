@@ -1,0 +1,57 @@
+# Type signatures for the Concord gem
+#
+# Concord provides a mixin to define object composition with
+# automatic initializer, attribute readers, and equality.
+
+class Concord < Module
+  MAX_NR_OF_OBJECTS: Integer
+
+  # Return the attribute names for this composition.
+  attr_reader names: Array[Symbol]
+
+  # Attribute keys used for equality (provided by Equalizer at runtime).
+  private def equalizer_keys: () -> Array[Symbol]
+
+  # Array deconstruction for pattern matching (defined on generated module).
+  def deconstruct: () -> Array[untyped]
+
+  # Hash deconstruction for pattern matching (defined on generated module).
+  def deconstruct_keys: (Array[Symbol]? requested) -> Hash[Symbol, untyped]
+
+  # Compare attributes using the given comparator (defined on generated module).
+  private def cmp?: (Symbol comparator, untyped other) -> bool
+
+  private
+
+  # Initialize a new Concord module with the given attribute names.
+  def initialize: (*Symbol names) -> void
+
+  # Hook run when the module is included into a class or module.
+  def included: (Module descendant) -> void
+
+  # Define the initialize method on the generated module.
+  def define_initialize: () -> void
+
+  # Define attribute readers on the generated module.
+  def define_readers: () -> void
+
+  # Define equalizer methods on the generated module.
+  def define_equalizer: () -> void
+
+  # Define deconstruct and deconstruct_keys on the generated module.
+  def define_pattern_matching: () -> void
+
+  # Define cmp? method on the generated module.
+  def define_cmp: () -> void
+
+  @names: Array[Symbol]
+  @module: Module
+
+  # Mixin for public attribute readers.
+  class Public < Concord
+    private
+
+    # Hook called when the module is included into a class or module.
+    def included: (Module descendant) -> void
+  end
+end

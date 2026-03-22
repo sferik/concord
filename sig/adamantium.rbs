@@ -1,0 +1,6 @@
+# Minimal type stub for the Adamantium gem
+
+module Adamantium
+  module Flat
+  end
+end

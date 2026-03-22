@@ -1,0 +1,13 @@
+---
+usage: opensource
+mutation:
+  operators: full
+integration:
+  name: rspec
+includes:
+  - lib
+requires:
+  - concord
+matcher:
+  subjects:
+    - 'Concord*'

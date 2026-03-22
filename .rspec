@@ -1,6 +1,4 @@
---color
 --format progress
---profile
 --order random
 --fail-fast
 --warnings
